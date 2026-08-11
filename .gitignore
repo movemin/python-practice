@@ -3,3 +3,7 @@ WEB/.venv/
 
 # 사용자 개인의 VS Code 개발 환경
 .vscode/
+
+# 캐시(Cache) 폴더
+__pycache__/
+*.pyc

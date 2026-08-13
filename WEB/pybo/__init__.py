@@ -23,5 +23,6 @@ def create_app():
     
     from .views import main_view
     app.register_blueprint(main_view.bp)
+    from . import models # 작성 후: python -m flask --app pybo db migrate
     
     return app

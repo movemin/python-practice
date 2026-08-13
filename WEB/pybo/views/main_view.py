@@ -6,6 +6,6 @@ bp = Blueprint('main', __name__, url_prefix='/')
 def first():
     return 'first'
 
-@bp.route('second/')
+@bp.route('/second')
 def second():
     return 'second'

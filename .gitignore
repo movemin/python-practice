@@ -1,9 +1,20 @@
-# WEB 가상환경 제외
-WEB/.venv/
-
-# 사용자 개인의 VS Code 개발 환경
-.vscode/
-
-# 캐시(Cache) 폴더
-__pycache__/
+# 파이썬 캐시 파일 및 폴더 (어느 위치에 있든 전체 제외)
+**/__pycache__/
 *.pyc
+*.pyo
+
+# 가상환경
+venv/
+.venv/
+env/
+
+# 민감 정보 및 환경변수
+.env
+
+# 로컬 SQLite 데이터베이스
+*.db
+WEB/pybo.db
+
+# IDE 설정 파일 (VS Code / PyCharm)
+.vscode/
+.idea/

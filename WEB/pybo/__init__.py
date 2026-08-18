@@ -21,9 +21,10 @@ def create_app():
     db.init_app(app)
     migrate.init_app(app, db)
     
-    from .views import main_views, question_views
+    from .views import main_views, question_views, answer_views
     app.register_blueprint(main_views.bp)
     app.register_blueprint(question_views.bp)
+    app.register_blueprint(answer_views.bp)
     
     from . import models # 작성 후: python -m flask --app pybo db migrate
     

@@ -18,3 +18,8 @@ WEB/pybo.db
 # IDE 설정 파일 (VS Code / PyCharm)
 .vscode/
 .idea/
+
+pybo.db
+
+# 부트스트랩 파일
+**css_packages/

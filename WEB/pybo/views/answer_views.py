@@ -17,4 +17,4 @@ def create(question_id):
         question.answer_set.append(answer)
         db.session.commit()
         return redirect(url_for('question.detail', question_id=question.id, form=form))
-    return render_template('question/question_detail.html', question_id=question.id, form=form)
+    return render_template('question/question_detail.html', question=question, form=form)

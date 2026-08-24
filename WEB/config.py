@@ -7,7 +7,6 @@ BASE_DIR = os.path.dirname(__file__)
 
 SQLALCHEMY_DATABASE_URI = 'sqlite:///{}'.format(os.path.join(BASE_DIR, 'pybo.db'))
 SQLALCHEMY_TRACK_MODIFICATIONS = False
-
 SECRET_KEY = "dev"
 # ---오라클 버전---
 # # 1. Docker 가상 오라클 서버 접속 정보

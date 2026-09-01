@@ -23,3 +23,6 @@ pybo.db
 
 # 부트스트랩 파일
 **css_packages/
+
+# 연습 파일
+/test

@@ -25,7 +25,9 @@ def create_app():
     app.register_blueprint(main_views.bp)
     app.register_blueprint(question_views.bp)
     app.register_blueprint(answer_views.bp)
+
+    from .filter import format_datetime
+    app.jinja_env.filters['datetime'] = format_datetime
     
-    from . import models # 작성 후: python -m flask --app pybo db migrate
     
     return app

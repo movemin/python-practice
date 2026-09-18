@@ -24,7 +24,7 @@ def signup():
             flash('이미 존재하는 사용자입니다.')
     return render_template('auth/signup.html', form=form)
 
-@bp.route('/signup/', methods=('GET', 'POST'))
+@bp.route('/login/', methods=('GET', 'POST'))
 def login():
     form = UserLoginForm()
     if request.method == 'POST' and form.validate_on_submit():

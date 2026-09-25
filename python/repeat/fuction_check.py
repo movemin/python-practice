@@ -10,19 +10,31 @@ _________________________________________________
 100명의 사람이 하나 이상의 테이블에 나누어 앉는 패턴을 구하세요.
 소스 코드에서 한글 변수명은 여러분들의 이해를 돕기 위한 것이니, 식별자 작성 규칙에 따라 이름을 정해 주세요.
 """
-total = 0
-peoples = 6
+
+peoples = 1000
+memoization = {
+    # key: value
+    # parameter: return value
+}
 def graph(n, prev):
+    # tuple: imutable data type -> dictionary key can
+    if (n, prev) in memoization:
+        return memoization[(n, prev)]
+    
+    return_value = 0
     if n == 0:
-        global total
-        total += 1
-    print(f"{n}에 진입")
-    # 인원을 앉혔으면 절대 그 인원수보다 적게 앉히지 마라!
-    # -> 절대 숫자가 줄어들게 앉히미 마라!
-    # 무조건 (오름차순)으로 만들어라!
-    for i in range(max(2, prev), min(n, 10) + 1):  # 화살표 구현
-        print(f"{i} 화살표 만듦")
-        graph(n - i, i)
-    print(f"{n}에서 리턴")
-graph(peoples, 0)
-print(total)
+        return_value += 1
+    else:  # else 없어도 정상 작동
+        # 인원을 앉혔으면 절대 그 인원수보다 적게 앉히지 마라!
+        # -> 절대 숫자가 줄어들게 앉히미 마라!
+        # 무조건 (오름차순)으로 만들어라!
+        for i in range(max(2, prev), min(n, 10) + 1):  # 화살표 구현
+            return_value += graph(n - i, i)
+    memoization[(n, prev)] = return_value
+    return return_value
+import time
+
+debug_before_time = time.time()
+print(graph(peoples, 0))
+debug_affter_time = time.time()
+print(debug_affter_time - debug_before_time)

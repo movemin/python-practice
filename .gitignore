@@ -25,4 +25,4 @@ pybo.db
 **css_packages/
 
 # 연습 파일
-/test
+**/test

@@ -10,6 +10,7 @@ class Stack:
     @property
     def print(self):
         print(self._list)
+        
 stack = Stack()
 stack.push(10)  # [10]
 stack.print
